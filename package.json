@@ -1,0 +1,27 @@
+{
+  "name": "taterclicker",
+  "version": "0.0.0",
+  "description": "Click taters",
+  "main": "clicker.js",
+  "scripts": {
+	"start": "cd src/main/ && npx webpack-dev-server",
+	"build": "rm docs/*.js && cd src/main && npx webpack --env.production",
+	"electron": "cd src/electron && tsc && electron dist/index.js",
+	"test-electron": "cd src/electron && tsc && electron dist/debug.js"
+},
+  "keywords": [
+    "webgame",
+    "tater"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^8.0.6",
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "worker-loader": "^2.0.0",
+    "electron": "^11.0.0-beta.13",
+    "electron-builder": "^22.9.1"
+  }
+}
