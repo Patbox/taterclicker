@@ -2,10 +2,10 @@
   "name": "taterclicker",
   "version": "0.0.0",
   "description": "Click taters",
-  "main": "clicker.js",
+  "main": "src/electron/dist/index.js",
   "scripts": {
 	"start": "cd src/main/ && npx webpack-dev-server",
-	"build": "rm docs/*.js && cd src/main && npx webpack --env.production",
+	"build": "rm docs/*.js & cd src/main && npx webpack --env.production",
 	"electron": "cd src/electron && tsc && electron dist/index.js",
 	"test-electron": "cd src/electron && tsc && electron dist/debug.js"
 },

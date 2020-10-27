@@ -7,9 +7,11 @@ const numbers: HTMLDivElement = document.getElementById('numbers');
 
 tater.onclick = function () {
 	num = Number(localStorage.getItem('clicks'));
-	num += Number(1);
+	num = num + 1;
 
-	var numbers = document.getElementById('numbers');
+	if (num % 20 == 0) {
+		document.body.style.backgroundColor = randomColor();
+	}
 
 	localStorage.setItem('clicks', num.toString());
 
@@ -31,3 +33,26 @@ tater.onclick = function () {
 		tater.src = 'https://cdn.discordapp.com/emojis/757177176419467305.png';
 	}
 };
+
+function randomColor() {
+	const x = Math.floor(Math.random() * 7);
+
+	switch (x) {
+		case 0:
+			return '#4281A4';
+		case 1:
+			return '#C1666B';
+		case 2:
+			return '#48A9A6';
+		case 3:
+			return '#A24936';
+		case 4:
+			return '#3E5641';
+		case 5:
+			return '#FF9A6B';
+		case 6:
+			return '#C99DA3';
+		case 7:
+			return '#996888';
+	}
+}
