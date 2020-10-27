@@ -1,21 +1,26 @@
-let num: number = 0;
+let num: bigint = 0n;
 
 // @ts-ignore
 const tater: HTMLImageElement = document.getElementById('tater');
 // @ts-ignore
 const numbers: HTMLDivElement = document.getElementById('numbers');
 
-tater.onclick = function () {
-	num = Number(localStorage.getItem('clicks'));
-	num = num + 1;
 
-	if (num % 20 == 0) {
+
+
+tater.onclick = function () {
+	let data = localStorage.getItem('🥔');
+	if (data == 'Infinity' || data == '-Infinity' || data == 'NaN' || data == '-NaN' || data == null) data = '0';
+	num = BigInt(data);
+	num = num + 1n;
+
+	if (num % 20n == 0n) {
 		document.body.style.backgroundColor = randomColor();
 	}
 
-	localStorage.setItem('clicks', num.toString());
+	localStorage.setItem('🥔', num.toString());
 
-	numbers.innerHTML = num.toString();
+	numbers.innerHTML = num.toString().replace('n', '');
 
 	if (num >= 100) {
 		tater.src = 'https://cdn.discordapp.com/emojis/559880832148439077.png';
